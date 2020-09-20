@@ -78,7 +78,7 @@ fi
 docker pull hsghost/ncmdump:latest
 
 # Prepare the terminal command.
-if [ "$(type -t ncmdump)" == 'function' ] ; then
+if (! declare -f ncmdump >/dev/null ) ; then
     rm_func ncmdump ~/.bash_profile
     rm_func ncmdump ~/.zsh
 fi
