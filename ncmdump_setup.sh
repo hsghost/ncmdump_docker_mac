@@ -37,16 +37,16 @@ rm_func () {
     mv "$fullpath".tmp "$fullpath"
 }
 
-# Pre-installation confirmation.
-echo -e "\n [ncmdump Installation] This program will occupy approx. $(tput setaf 7)$ncmdump_size$(tput sgr 0) of disk space. \
-And its prerequsite Docker Desktop would require an extra $(tput setaf 7)$docker_size$(tput sgr 0) of disk space, \
-and Homebrew approx. $(tput setaf 7)$homebrew_size$(tput sgr 0), in case they're not already installed.\n"
+# Pre-setup confirmation.
+echo -e "\n [ncmdump Setup] This program will occupy approx. $(tput smso)$ncmdump_size$(tput sgr 0) of disk space. \
+And its prerequsite $(tput bold)Docker Desktop$(tput sgr 0) would require an extra $(tput smso)$docker_size$(tput sgr 0) of disk space, \
+and $(tput bold)Homebrew$(tput sgr 0) approx. $(tput smso)$homebrew_size$(tput sgr 0), in case they're not already installed.\n"
 while true; do
     read -p "Continue with the installation?" yn
     case $yn in
         [Yy]* ) break;;
         [Nn]* ) exit 1;;
-        * ) echo "Please answer ($(tput setaf 7)y$(tput sgr 0))es or ($(tput setaf 7)n$(tput sgr 0))o.";;
+        * ) echo "Please answer ($(tput smso)y$(tput sgr 0))es or ($(tput smso)n$(tput sgr 0))o.";;
     esac
 done
 
@@ -156,4 +156,4 @@ ncmdump () {
     return 0
 }
 EOF
-source ~/.bash_profile
+echo -e "\n[ncmdump Setup] Setup completed.\nOpen a new shell to use the ncmdump tool.\n\n$(tput smso)Usage:\nncmdump [ [ -r ] directory | files... ]$(tput sgr 0)\n"
