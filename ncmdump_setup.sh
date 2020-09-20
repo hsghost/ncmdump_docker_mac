@@ -38,8 +38,8 @@ rm_func () {
 }
 
 # Pre-setup confirmation.
-echo -e "\n [ncmdump Setup] This program will occupy approx. $(tput bold)$ncmdump_size$(tput sgr 0) of disk space. \
-And its prerequsite $(tput smso)Docker Desktop$(tput sgr 0) would require an extra $(tput bold)$docker_size$(tput sgr 0) of disk space, \
+echo -e "\n [ncmdump Setup]\nThis program will occupy approx. $(tput bold)$ncmdump_size$(tput sgr 0) of disk space. \n\
+And its prerequsite $(tput smso)Docker Desktop$(tput sgr 0) would require an extra $(tput bold)$docker_size$(tput sgr 0) of disk space, \n\
 and $(tput smso)Homebrew$(tput sgr 0) approx. $(tput bold)$homebrew_size$(tput sgr 0), in case they're not already installed.\n"
 while true; do
     read -p "Continue with the installation?" yn
