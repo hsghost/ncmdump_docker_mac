@@ -38,9 +38,9 @@ rm_func () {
 }
 
 # Pre-setup confirmation.
-echo -e "\n [ncmdump Setup] This program will occupy approx. $(tput smso)$ncmdump_size$(tput sgr 0) of disk space. \
-And its prerequsite $(tput bold)Docker Desktop$(tput sgr 0) would require an extra $(tput smso)$docker_size$(tput sgr 0) of disk space, \
-and $(tput bold)Homebrew$(tput sgr 0) approx. $(tput smso)$homebrew_size$(tput sgr 0), in case they're not already installed.\n"
+echo -e "\n [ncmdump Setup] This program will occupy approx. $(tput bold)$ncmdump_size$(tput sgr 0) of disk space. \
+And its prerequsite $(tput smso)Docker Desktop$(tput sgr 0) would require an extra $(tput bold)$docker_size$(tput sgr 0) of disk space, \
+and $(tput smso)Homebrew$(tput sgr 0) approx. $(tput bold)$homebrew_size$(tput sgr 0), in case they're not already installed.\n"
 while true; do
     read -p "Continue with the installation?" yn
     case $yn in
@@ -156,4 +156,5 @@ ncmdump () {
     return 0
 }
 EOF
-echo -e "\n[ncmdump Setup] Setup completed.\nOpen a new shell to use the ncmdump tool.\n\n$(tput smso)Usage:\nncmdump [ [ -r ] directory | files... ]$(tput sgr 0)\n"
+echo -e "\n[ncmdump Setup] Setup completed.\nOpen a new shell to use the ncmdump tool.\n\n\
+$(tput smso)Usage:\nncmdump [ [ -r ] directory | files... ]$(tput sgr 0)\n"
