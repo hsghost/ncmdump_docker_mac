@@ -156,5 +156,4 @@ ncmdump () {
     return 0
 }
 EOF
-fi
 source ~/.bash_profile
