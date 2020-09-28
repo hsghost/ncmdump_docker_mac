@@ -50,17 +50,17 @@ while true; do
     esac
 done
 
-# Install Homebrew.
-which -s brew
-if [[ $? != 0 ]] ; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-else
-    brew update
-fi
-
-# Install Docker Desktop.
+# Install prerequisites.
 which -s docker
 if [[ $? != 0 ]] ; then
+    # Install or update Homebrew.
+    which -s brew
+    if [[ $? != 0 ]] ; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    else
+        brew update
+    fi
+    # Install Docker Desktop.
     brew cask install docker
 fi
 
